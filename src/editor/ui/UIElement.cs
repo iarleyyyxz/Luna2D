@@ -8,5 +8,9 @@ namespace Luna.Editor
         public bool Visible = true;
 
         public abstract void Draw(IntPtr renderer);
+
+        public virtual void Update()
+        {
+        }
     }
 }
