@@ -201,15 +201,6 @@
           }
         }
       },
-      "sdl2/2.0.5": {
-        "type": "package",
-        "dependencies": {
-          "sdl2.redist": "2.0.5"
-        }
-      },
-      "sdl2.redist/2.0.5": {
-        "type": "package"
-      },
       "StbImageSharp/2.30.15": {
         "type": "package",
         "compile": {
@@ -455,114 +446,6 @@
         "opentk.windowing.graphicslibraryframework.nuspec"
       ]
     },
-    "sdl2/2.0.5": {
-      "sha512": "HIpYBIe9qlG/U8hGRSiGW7YQARg9U78+pRKFikW9dCUvfZ1hFNpZwL4qeOUwcecwYk7i5sSlnwEiczcOysZDsA==",
-      "type": "package",
-      "path": "sdl2/2.0.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/configurations.autopkg",
-        "build/native/default-propertiesui.xml",
-        "build/native/docs/README.txt",
-        "build/native/include/SDL.h",
-        "build/native/include/SDL_assert.h",
-        "build/native/include/SDL_atomic.h",
-        "build/native/include/SDL_audio.h",
-        "build/native/include/SDL_bits.h",
-        "build/native/include/SDL_blendmode.h",
-        "build/native/include/SDL_clipboard.h",
-        "build/native/include/SDL_config.h",
-        "build/native/include/SDL_cpuinfo.h",
-        "build/native/include/SDL_egl.h",
-        "build/native/include/SDL_endian.h",
-        "build/native/include/SDL_error.h",
-        "build/native/include/SDL_events.h",
-        "build/native/include/SDL_filesystem.h",
-        "build/native/include/SDL_gamecontroller.h",
-        "build/native/include/SDL_gesture.h",
-        "build/native/include/SDL_haptic.h",
-        "build/native/include/SDL_hints.h",
-        "build/native/include/SDL_joystick.h",
-        "build/native/include/SDL_keyboard.h",
-        "build/native/include/SDL_keycode.h",
-        "build/native/include/SDL_loadso.h",
-        "build/native/include/SDL_log.h",
-        "build/native/include/SDL_main.h",
-        "build/native/include/SDL_messagebox.h",
-        "build/native/include/SDL_mouse.h",
-        "build/native/include/SDL_mutex.h",
-        "build/native/include/SDL_name.h",
-        "build/native/include/SDL_opengl.h",
-        "build/native/include/SDL_opengl_glext.h",
-        "build/native/include/SDL_opengles.h",
-        "build/native/include/SDL_opengles2.h",
-        "build/native/include/SDL_opengles2_gl2.h",
-        "build/native/include/SDL_opengles2_gl2ext.h",
-        "build/native/include/SDL_opengles2_gl2platform.h",
-        "build/native/include/SDL_opengles2_khrplatform.h",
-        "build/native/include/SDL_pixels.h",
-        "build/native/include/SDL_platform.h",
-        "build/native/include/SDL_power.h",
-        "build/native/include/SDL_quit.h",
-        "build/native/include/SDL_rect.h",
-        "build/native/include/SDL_render.h",
-        "build/native/include/SDL_revision.h",
-        "build/native/include/SDL_rwops.h",
-        "build/native/include/SDL_scancode.h",
-        "build/native/include/SDL_shape.h",
-        "build/native/include/SDL_stdinc.h",
-        "build/native/include/SDL_surface.h",
-        "build/native/include/SDL_system.h",
-        "build/native/include/SDL_syswm.h",
-        "build/native/include/SDL_test.h",
-        "build/native/include/SDL_test_assert.h",
-        "build/native/include/SDL_test_common.h",
-        "build/native/include/SDL_test_compare.h",
-        "build/native/include/SDL_test_crc32.h",
-        "build/native/include/SDL_test_font.h",
-        "build/native/include/SDL_test_fuzzer.h",
-        "build/native/include/SDL_test_harness.h",
-        "build/native/include/SDL_test_images.h",
-        "build/native/include/SDL_test_log.h",
-        "build/native/include/SDL_test_md5.h",
-        "build/native/include/SDL_test_random.h",
-        "build/native/include/SDL_thread.h",
-        "build/native/include/SDL_timer.h",
-        "build/native/include/SDL_touch.h",
-        "build/native/include/SDL_types.h",
-        "build/native/include/SDL_version.h",
-        "build/native/include/SDL_video.h",
-        "build/native/include/begin_code.h",
-        "build/native/include/close_code.h",
-        "build/native/lib/Win32/dynamic/SDL2.lib",
-        "build/native/lib/Win32/dynamic/SDL2main.lib",
-        "build/native/lib/x64/dynamic/SDL2.lib",
-        "build/native/lib/x64/dynamic/SDL2main.lib",
-        "build/native/sdl2-propertiesui-27dcfa3c-5d71-4b1e-ac76-5275c5d53665.xml",
-        "build/native/sdl2.targets",
-        "build/publisher-info.txt",
-        "sdl2.2.0.5.nupkg.sha512",
-        "sdl2.nuspec"
-      ]
-    },
-    "sdl2.redist/2.0.5": {
-      "sha512": "eyTy0TvzTdkw9ZHrHR1TmaKb2uIbeKH33xhWctyteN5tjyOWUhiASkRuWfv4MLsynFXHMZtSIFtwTNlJGZYW3g==",
-      "type": "package",
-      "path": "sdl2.redist/2.0.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/configurations.autopkg",
-        "build/native/bin/Win32/dynamic/SDL2.dll",
-        "build/native/bin/x64/dynamic/SDL2.dll",
-        "build/native/default-propertiesui.xml",
-        "build/native/sdl2.redist.targets",
-        "build/publisher-info.txt",
-        "sdl2.redist.2.0.5.nupkg.sha512",
-        "sdl2.redist.nuspec"
-      ]
-    },
     "StbImageSharp/2.30.15": {
       "sha512": "7QqbupVhz2kcFUPTgMw4iHR9rYDHGundzzee19Mwmd1typ2Lnv8EVJcLJxlkeBM2+4ex0NwsMtdbGSJctp1XCQ==",
       "type": "package",
@@ -654,7 +537,6 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "OpenTK >= 4.6.6",
-      "SDL2 >= 2.0.5",
       "StbImageSharp >= 2.30.15",
       "System.Drawing.Common >= 9.0.10"
     ]
@@ -705,10 +587,6 @@
           "OpenTK": {
             "target": "Package",
             "version": "[4.6.6, )"
-          },
-          "SDL2": {
-            "target": "Package",
-            "version": "[2.0.5, )"
           },
           "StbImageSharp": {
             "target": "Package",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "r7JVxBlSuN8=",
+  "dgSpecHash": "mmxx3U7RWcU=",
   "success": true,
   "projectFilePath": "C:\\Users\\josy-\\Documents\\luna game engine\\luna game engine.csproj",
   "expectedPackageFiles": [
@@ -16,8 +16,6 @@
     "C:\\Users\\josy-\\.nuget\\packages\\opentk.windowing.common\\4.6.6\\opentk.windowing.common.4.6.6.nupkg.sha512",
     "C:\\Users\\josy-\\.nuget\\packages\\opentk.windowing.desktop\\4.6.6\\opentk.windowing.desktop.4.6.6.nupkg.sha512",
     "C:\\Users\\josy-\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\4.6.6\\opentk.windowing.graphicslibraryframework.4.6.6.nupkg.sha512",
-    "C:\\Users\\josy-\\.nuget\\packages\\sdl2\\2.0.5\\sdl2.2.0.5.nupkg.sha512",
-    "C:\\Users\\josy-\\.nuget\\packages\\sdl2.redist\\2.0.5\\sdl2.redist.2.0.5.nupkg.sha512",
     "C:\\Users\\josy-\\.nuget\\packages\\stbimagesharp\\2.30.15\\stbimagesharp.2.30.15.nupkg.sha512",
     "C:\\Users\\josy-\\.nuget\\packages\\system.drawing.common\\9.0.10\\system.drawing.common.9.0.10.nupkg.sha512",
     "C:\\Users\\josy-\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
