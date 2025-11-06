@@ -82,7 +82,8 @@ namespace Luna.Game
             gameWindow.Load += () =>
             {
                 GL.ClearColor(0.1f, 0.1f, 0.1f, 1f);
-                texture2D = new Texture2D("assets/textures/diamond_sword2.png");
+
+                // Load the scene, resources, etc.
             };
 
             gameWindow.RenderFrame += (FrameEventArgs args) =>
@@ -100,7 +101,7 @@ namespace Luna.Game
         {
              gameWindow.UpdateFrame += (FrameEventArgs args) =>
             {
-                
+                // Loop the scenes, game, scripts, etc.
             };
             
         }

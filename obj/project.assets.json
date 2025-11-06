@@ -201,6 +201,9 @@
           }
         }
       },
+      "SDL2-CS/2.0.0": {
+        "type": "package"
+      },
       "StbImageSharp/2.30.15": {
         "type": "package",
         "compile": {
@@ -446,6 +449,23 @@
         "opentk.windowing.graphicslibraryframework.nuspec"
       ]
     },
+    "SDL2-CS/2.0.0": {
+      "sha512": "W7T4y+lMs7Wm/94dGggRxJYqxX5N6uuxuxw5ob/H34fnaoUwgoG0s+P7xzqsGXUc1cbCAjnShs21FdeFUnPlHA==",
+      "type": "package",
+      "path": "sdl2-cs/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "content/net20/SDL2-CS/LPUtf8StrMarshaler.cs",
+        "content/net20/SDL2-CS/SDL2.cs",
+        "content/net20/SDL2-CS/SDL2_image.cs",
+        "content/net20/SDL2-CS/SDL2_mixer.cs",
+        "content/net20/SDL2-CS/SDL2_ttf.cs",
+        "sdl2-cs.2.0.0.nupkg.sha512",
+        "sdl2-cs.nuspec"
+      ]
+    },
     "StbImageSharp/2.30.15": {
       "sha512": "7QqbupVhz2kcFUPTgMw4iHR9rYDHGundzzee19Mwmd1typ2Lnv8EVJcLJxlkeBM2+4ex0NwsMtdbGSJctp1XCQ==",
       "type": "package",
@@ -537,6 +557,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "OpenTK >= 4.6.6",
+      "SDL2-CS >= 2.0.0",
       "StbImageSharp >= 2.30.15",
       "System.Drawing.Common >= 9.0.10"
     ]
@@ -587,6 +608,10 @@
           "OpenTK": {
             "target": "Package",
             "version": "[4.6.6, )"
+          },
+          "SDL2-CS": {
+            "target": "Package",
+            "version": "[2.0.0, )"
           },
           "StbImageSharp": {
             "target": "Package",

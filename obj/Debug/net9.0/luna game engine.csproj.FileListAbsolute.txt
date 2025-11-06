@@ -3,14 +3,20 @@ C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\luna game engine.deps
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\luna game engine.runtimeconfig.json
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\luna game engine.dll
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\luna game engine.pdb
+C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\OpenTK.Compute.dll
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\OpenTK.Core.dll
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\OpenTK.Graphics.dll
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\OpenTK.Input.dll
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\OpenTK.Mathematics.dll
+C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\OpenTK.OpenAL.dll
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\OpenTK.Windowing.Common.dll
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\OpenTK.Windowing.Desktop.dll
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\StbImageSharp.dll
+C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\System.Drawing.Common.dll
+C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\System.Private.Windows.Core.dll
+C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\runtimes\win\lib\net9.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\runtimes\linux-x64\native\libglfw.so.3.3
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\runtimes\osx-x64\native\libglfw.3.dylib
 C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\runtimes\win-x64\native\glfw3.dll
@@ -20,15 +26,10 @@ C:\Users\josy-\Documents\luna game engine\obj\Debug\net9.0\luna game engine.Gene
 C:\Users\josy-\Documents\luna game engine\obj\Debug\net9.0\luna game engine.AssemblyInfoInputs.cache
 C:\Users\josy-\Documents\luna game engine\obj\Debug\net9.0\luna game engine.AssemblyInfo.cs
 C:\Users\josy-\Documents\luna game engine\obj\Debug\net9.0\luna game engine.csproj.CoreCompileInputs.cache
+C:\Users\josy-\Documents\luna game engine\obj\Debug\net9.0\luna game engine.sourcelink.json
 C:\Users\josy-\Documents\luna game engine\obj\Debug\net9.0\luna gam.18C92C68.Up2Date
 C:\Users\josy-\Documents\luna game engine\obj\Debug\net9.0\luna game engine.dll
 C:\Users\josy-\Documents\luna game engine\obj\Debug\net9.0\refint\luna game engine.dll
 C:\Users\josy-\Documents\luna game engine\obj\Debug\net9.0\luna game engine.pdb
 C:\Users\josy-\Documents\luna game engine\obj\Debug\net9.0\luna game engine.genruntimeconfig.cache
 C:\Users\josy-\Documents\luna game engine\obj\Debug\net9.0\ref\luna game engine.dll
-C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\OpenTK.OpenAL.dll
-C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\StbImageSharp.dll
-C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\System.Drawing.Common.dll
-C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\System.Private.Windows.Core.dll
-C:\Users\josy-\Documents\luna game engine\bin\Debug\net9.0\runtimes\win\lib\net9.0\Microsoft.Win32.SystemEvents.dll

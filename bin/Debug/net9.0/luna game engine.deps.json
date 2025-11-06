@@ -9,6 +9,7 @@
       "luna game engine/1.0.0": {
         "dependencies": {
           "OpenTK": "4.6.6",
+          "SDL2-CS": "2.0.0",
           "StbImageSharp": "2.30.15",
           "System.Drawing.Common": "9.0.10"
         },
@@ -166,6 +167,7 @@
           }
         }
       },
+      "SDL2-CS/2.0.0": {},
       "StbImageSharp/2.30.15": {
         "runtime": {
           "lib/netstandard2.0/StbImageSharp.dll": {
@@ -281,6 +283,13 @@
       "sha512": "sha512-muHVuTTpqIvL89t0ey4WfJUTZAMPsMVbWhChdlZdLQ/dzJOYRfh6j40/tD+FKVxL3hYoqm2lS+hKcWVzglt7iw==",
       "path": "opentk.windowing.graphicslibraryframework/4.6.6",
       "hashPath": "opentk.windowing.graphicslibraryframework.4.6.6.nupkg.sha512"
+    },
+    "SDL2-CS/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W7T4y+lMs7Wm/94dGggRxJYqxX5N6uuxuxw5ob/H34fnaoUwgoG0s+P7xzqsGXUc1cbCAjnShs21FdeFUnPlHA==",
+      "path": "sdl2-cs/2.0.0",
+      "hashPath": "sdl2-cs.2.0.0.nupkg.sha512"
     },
     "StbImageSharp/2.30.15": {
       "type": "package",

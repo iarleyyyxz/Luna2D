@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[4.6.6, )"
             },
+            "SDL2-CS": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "StbImageSharp": {
               "target": "Package",
               "version": "[2.30.15, )"
