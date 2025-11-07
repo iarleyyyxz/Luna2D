@@ -77,6 +77,8 @@ namespace Luna
                     Height = 100,
                     Text = "Click Me",
                 };
+
+            
                 button.Draw(_renderer);
 
                 
