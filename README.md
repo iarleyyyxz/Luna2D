@@ -1,6 +1,6 @@
 <img width="1920" height="700" alt="Luna-Banner2" src="https://github.com/user-attachments/assets/fd1dd760-06e2-4052-b009-28705b8acca6" />
 
-# 🚀 Luna2D - A Simple & Flexible 2D Game Engine
+# 🚀 Luna2D - Game Engine
 
 [![C#](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://dotnet.microsoft.com/languages/csharp)
 [![.NET 9.0](https://img.shields.io/badge/.NET-9.0-5C2D91?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/download/dotnet/9.0)
