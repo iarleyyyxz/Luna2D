@@ -34,5 +34,12 @@ namespace Luna.Editor
             foreach (var menu in Menus)
                 menu.Update();
         }
+
+        public override void OnResize()
+        {
+            Width = UIManager.ScreenWidth;
+        }
+
     }
+    
 }

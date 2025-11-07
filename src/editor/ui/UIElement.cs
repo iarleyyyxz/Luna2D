@@ -9,8 +9,8 @@ namespace Luna.Editor
 
         public abstract void Draw(IntPtr renderer);
 
-        public virtual void Update()
-        {
-        }
+        public virtual void Update() {}
+
+        public virtual void OnResize() {}
     }
 }

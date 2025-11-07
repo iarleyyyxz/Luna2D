@@ -41,7 +41,7 @@ namespace Luna.Editor
         public override void Update()
         {
             // Handle button update logic here (e.g., mouse hover, click detection)
-            bool isInside = Mouse.IsMouseOver(Mouse.X, Mouse.Y, X, Y, Width, Height);   
+            bool isInside = Mouse.IsMouseOver(Mouse.X, Mouse.Y, X, Y, Width, Height);
 
             if (isInside && !IsMouseHovered)
             {
@@ -61,6 +61,12 @@ namespace Luna.Editor
 
 
 
+        }
+
+        public override void OnResize()
+        {
+            X = (UIManager.ScreenWidth / 2) - (Width / 2);
+            Y = (UIManager.ScreenHeight / 2) - (Height / 2);
         }
     }
 }
