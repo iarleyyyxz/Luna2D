@@ -1,62 +1,62 @@
 using System;
-using Luna.Editor;
-using Luna.IO;
 using SDL2;
+using Luna.IO;
+using Luna.Editor;
 
-namespace Luna
+public class Window
 {
-    public class Window
-    {
-        private IntPtr _window;
+    private IntPtr _window;
     private IntPtr _renderer;
     public bool IsRunning { get; private set; }
 
+    private UIButton button;
+    private Menubar menubar; // ← agora é global e não recriado
+
     public int Width { get; private set; }
     public int Height { get; private set; }
-
     public string Title { get; private set; }
 
     public Window(string title, int width, int height)
     {
-        this.Width = width;
-        this.Height = height;
-        this.Title = title;
+        Width = width;
+        Height = height;
+        Title = title;
 
-        // Inicializa o SDL (vídeo)
         if (SDL.SDL_Init(SDL.SDL_INIT_VIDEO) < 0)
+            throw new Exception(SDL.SDL_GetError());
+
+        _window = SDL.SDL_CreateWindow(title, SDL.SDL_WINDOWPOS_CENTERED, SDL.SDL_WINDOWPOS_CENTERED, width, height, SDL.SDL_WindowFlags.SDL_WINDOW_SHOWN);
+        _renderer = SDL.SDL_CreateRenderer(_window, -1, SDL.SDL_RendererFlags.SDL_RENDERER_ACCELERATED | SDL.SDL_RendererFlags.SDL_RENDERER_PRESENTVSYNC);
+
+        Font.Init(_renderer, "assets/SORA-REGULAR.ttf", 16);
+
+        // ✅ Criamos UI apenas 1 vez
+        button = new UIButton
         {
-            throw new Exception($"Error on init SDL: {SDL.SDL_GetError()}");
-        }
+            X = 100,
+            Y = 100,
+            Width = 200,
+            Height = 100,
+            Text = "Click Me",
+            OnClick = () => Console.WriteLine("Botão clicado!")
+        };
 
-        _window = SDL.SDL_CreateWindow(
-            title,
-            SDL.SDL_WINDOWPOS_CENTERED,
-            SDL.SDL_WINDOWPOS_CENTERED,
-            width,
-            height,
-            SDL.SDL_WindowFlags.SDL_WINDOW_SHOWN
-        );
+        menubar = new Menubar { X = 0, Y = 0, Width = width, Height = 24 };
 
-        if (_window == IntPtr.Zero)
-        {
-            throw new Exception($"Error on create Window: {SDL.SDL_GetError()}");
-        }
+        var file = new Menu { Title = "File" };
+        file.AddMenuItem(new MenuItem("New", () => Console.WriteLine("New clicked")));
+        file.AddMenuItem(new MenuItem("Open"));
+        file.AddMenuItem(new MenuItem("Exit", () => IsRunning = false));
 
-        _renderer = SDL.SDL_CreateRenderer(
-            _window,
-            -1,
-            SDL.SDL_RendererFlags.SDL_RENDERER_ACCELERATED |
-            SDL.SDL_RendererFlags.SDL_RENDERER_PRESENTVSYNC
-        );
+        var edit = new Menu { Title = "Edit" };
+        edit.AddMenuItem(new MenuItem("Undo"));
+        edit.AddMenuItem(new MenuItem("Redo"));
 
-        if (_renderer == IntPtr.Zero)
-        {
-            throw new Exception($"Error renderer: {SDL.SDL_GetError()}");
-        }
+        menubar.AddMenu(file);
+        menubar.AddMenu(edit);
 
         IsRunning = true;
     }
-
 
     public void Run()
     {
@@ -64,24 +64,17 @@ namespace Luna
         {
             ProcessEvents();
 
-            // Limpa a tela (cor preta)
             SDL.SDL_SetRenderDrawColor(_renderer, 0, 1, 2, 255);
             SDL.SDL_RenderClear(_renderer);
 
-                // Aqui você desenha coisas...
-                UIButton button = new UIButton
-                {
-                    X =  100,
-                    Y = 100,
-                    Width = 200,
-                    Height = 100,
-                    Text = "Click Me",
-                };
+            // ✅ Atualiza UI
+            button.Update();
+            menubar.Update();
 
-            
-                button.Draw(_renderer);
+            // ✅ Desenha UI
+            menubar.Draw(_renderer);
+            button.Draw(_renderer);
 
-                
             SDL.SDL_RenderPresent(_renderer);
         }
 
@@ -94,7 +87,7 @@ namespace Luna
         {
             Keyboard.ProcessEvent(e);
             Mouse.ProcessEvent(e);
-            
+
             if (e.type == SDL.SDL_EventType.SDL_QUIT)
                 IsRunning = false;
         }
@@ -105,6 +98,5 @@ namespace Luna
         SDL.SDL_DestroyRenderer(_renderer);
         SDL.SDL_DestroyWindow(_window);
         SDL.SDL_Quit();
-    }
     }
 }
