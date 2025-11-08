@@ -327,6 +327,28 @@ namespace Luna.IO
             return mx >= x && mx < x + width && my >= y && my < y + height;
         }
 
+        public static bool IsClickedInside(int x, int y, int width, int height)
+        {
+            foreach (Button b in Enum.GetValues(typeof(Button)))
+            {
+                var state = GetState(b);
+                if (state.Clicked && IsMouseOver(X, Y, x, y, width, height))
+                    return true;
+            }
+            return false;
+        }
+
+        public static bool IsClicked()
+        {
+            foreach (Button b in Enum.GetValues(typeof(Button)))
+            {
+                var state = GetState(b);
+                if (state.Clicked)
+                    return true;
+            }
+            return false;
+        }
+
         // internal helper: maps SDL button numeric to our enum
         private static Button? MapSdlButtonToEnum(uint sdlButton)
         {

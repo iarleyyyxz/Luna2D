@@ -3,6 +3,7 @@ using SDL2;
 using Luna.IO;
 using Luna.Editor;
 using Luna.Util;
+using Luna.Editor.UI;
 
 public class Window
 {
@@ -10,10 +11,7 @@ public class Window
     private IntPtr _renderer;
     public bool IsRunning { get; private set; }
 
-    private UIButton button;
-    private Menubar menubar; // ← agora é global e não recriad
-
-    private Viewport viewport;
+    private UIInputLabel uIInputLabel;
 
     public int Width { get; set; }
     public int Height { get; set; }
@@ -37,44 +35,19 @@ public class Window
         //SDL.SDL_SetWindowFullscreen(_window, (uint)SDL.SDL_WindowFlags.SDL_WINDOW_FULLSCREEN_DESKTOP);
         SDL.SDL_SetWindowFullscreen(_window, (uint)SDL.SDL_WindowFlags.SDL_WINDOW_FULLSCREEN_DESKTOP);
 
+        SDL.SDL_StartTextInput();
+
         Font.Init(_renderer, "assets/SORA-REGULAR.ttf", 16);
 
         // ✅ Criamos UI apenas 1 vez
-        viewport = new Viewport
-
+        uIInputLabel = new UIInputLabel
         {
-            X = 250,
-            Y = 40,
-            Width = 400,
-            Height = 320,
-            Title = "Main Viewport"
-        };
-
-        button = new UIButton
-        {
-            X = 100,
-            Y = 100,
+            X = 20,
+            Y = 50,
             Width = 200,
-            Height = 100,
-            Text = "Click Me",
-            OnClick = () => Console.WriteLine("Botão clicado!")
+            Height = 24
         };
-
-
-
-        menubar = new Menubar { X = 0, Y = 0, Width = width, Height = 24 };
-
-        var file = new Menu { Title = "File" };
-        file.AddMenuItem(new MenuItem("New", () => Console.WriteLine("New clicked")));
-        file.AddMenuItem(new MenuItem("Open"));
-        file.AddMenuItem(new MenuItem("Exit", () => IsRunning = false));
-
-        var edit = new Menu { Title = "Edit" };
-        edit.AddMenuItem(new MenuItem("Undo"));
-        edit.AddMenuItem(new MenuItem("Redo"));
-
-        menubar.AddMenu(file);
-        menubar.AddMenu(edit);
+    
 
 
         IsRunning = true;
@@ -91,15 +64,9 @@ public class Window
 
             // ✅ Atualiza UI
             Time.Update();
-            viewport.Update();
-            button.Update();
-            menubar.Update();
+            uIInputLabel.Update();
 
-
-            // ✅ Desenha UI
-            viewport.Draw(_renderer);
-            menubar.Draw(_renderer);
-            button.Draw(_renderer);
+            uIInputLabel.Draw(_renderer);
 
 
             SDL.SDL_RenderPresent(_renderer);
