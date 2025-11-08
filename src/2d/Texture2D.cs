@@ -45,7 +45,7 @@ namespace Luna.g2d
             Handle = GL.GenTexture();
             Bind();
 
-
+            StbImage.stbi_set_flip_vertically_on_load(1);
             using (Stream stream = File.OpenRead(path))
             {
                 var image = ImageResult.FromStream(stream, ColorComponents.RedGreenBlueAlpha);
