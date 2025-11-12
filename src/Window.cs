@@ -5,6 +5,7 @@ using Luna.Editor;
 using Luna.Util;
 using Luna.Preferences;
 using OpenTK.Graphics.OpenGL4;
+using Luna.Renderer;
 
 public class Window
 {
@@ -17,6 +18,10 @@ public class Window
     public string Title { get; set; }
 
     bool isFullscreen = true;
+
+    private FrameBuffer2D framebuffer;
+    private GLQuadRenderer quad;
+
 
     public Window(string title, int width, int height)
     {
@@ -49,8 +54,14 @@ public class Window
         OpenTK.Graphics.OpenGL4.GL.LoadBindings(new OpenTKBindings());
         
         SetWindowIcon("assets/icons/LunaIcon.bmp");
-        _renderer = SDL.SDL_CreateRenderer(_window, -1, SDL.SDL_RendererFlags.SDL_RENDERER_ACCELERATED |
-        SDL.SDL_RendererFlags.SDL_RENDERER_PRESENTVSYNC);
+        _renderer = SDL.SDL_CreateRenderer(
+    _window,
+    -1,
+    SDL.SDL_RendererFlags.SDL_RENDERER_ACCELERATED | SDL.SDL_RendererFlags.SDL_RENDERER_PRESENTVSYNC
+);
+
+        if (_renderer == IntPtr.Zero)
+            throw new Exception("Renderer Error: " + SDL.SDL_GetError());
 
         
         //SDL.SDL_SetWindowFullscreen(_window, (uint)SDL.SDL_WindowFlags.SDL_WINDOW_FULLSCREEN_DESKTOP);
@@ -63,6 +74,13 @@ public class Window
         IntPtr texOn = LoadTexture(_renderer, "assets/icons/CheckBoxIconLuna.png");
         IntPtr texOff = LoadTexture(_renderer, "assets/icons/CheckBoxIconLuna2.png");
 
+        framebuffer = new FrameBuffer2D(_renderer, 640, 360);
+        GL.BindFramebuffer(FramebufferTarget.Framebuffer, framebuffer.FBO);
+        var status = GL.CheckFramebufferStatus(FramebufferTarget.Framebuffer);
+        Console.WriteLine("FBO Status: " + status);
+        GL.BindFramebuffer(FramebufferTarget.Framebuffer, 0);
+        quad = new GLQuadRenderer();
+
         IsRunning = true;
     }
 
@@ -72,23 +90,32 @@ public class Window
         {
             ProcessEvents();
 
+            framebuffer.Bind();
+            GL.Viewport(0, 0, framebuffer.Width, framebuffer.Height);
             GL.ClearColor(1f, 0f, 0f, 1f);
             GL.Clear(ClearBufferMask.ColorBufferBit);
+            
+            // render stage
 
-            SDL.SDL_GL_SwapWindow(_window);
+         //   quad.DrawQuad(50, 50, 30, 30, 1f, 1f, 1f, 1f, framebuffer.Width, framebuffer.Height);
 
+            framebuffer.Unbind();
 
-            SDL.SDL_SetRenderDrawColor(_renderer, 0, 1, 2, 255);
+            framebuffer.ReadToSDLTexture();
+
+            SDL.SDL_SetRenderDrawColor(_renderer, 25, 25, 25, 255);
             SDL.SDL_RenderClear(_renderer);
 
-            Time.Update();
+            framebuffer.DrawSDL(120, 120, framebuffer.Width, framebuffer.Height);
 
-            
             SDL.SDL_RenderPresent(_renderer);
         }
 
         Quit();
     }
+
+
+
 
     private void ProcessEvents()
     {
@@ -163,7 +190,7 @@ public class Window
         IntPtr icon = SDL.SDL_LoadBMP(path);
         if (icon == IntPtr.Zero)
         {
-            Console.WriteLine("❌ Erro ao carregar icone: " + SDL.SDL_GetError());
+            Console.WriteLine("Error on load icon: " + SDL.SDL_GetError());
             return;
         }
 
