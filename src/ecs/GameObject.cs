@@ -1,38 +1,51 @@
-using System;
+using System.Collections.Generic;
 
 namespace Luna.Ecs
 {
     public class GameObject
     {
         public string Name { get; set; }
-        List<Component> components = new List<Component>();
+        List<Component> components = new();
 
         public bool IsActive { get; set; } = true;
 
         public GameObject(string name)
         {
-            this.Name = name;
-
-            
+            Name = name;
         }
 
         public T AddComponent<T>() where T : Component, new()
         {
             T c = new T { owner = this };
             components.Add(c);
-            c.Start();
-            return c;
+            return c; // Start será chamado na Scene.Start()
         }
 
         public T GetComponent<T>() where T : Component
         {
-            foreach (var c in components) if (c is T) return (T)c;
+            foreach (var c in components)
+                if (c is T t) return t;
+
             return null;
         }
 
-        public void Start() => components.ForEach(c => c.Start());
-        public void Update(float dt) => components.ForEach(c => c.Update(dt));
-        public void OnDestroy() => components.ForEach(c => c.OnDestroy());
-    
+        public void Start()
+        {
+            foreach (var c in components)
+                c.Start();
+        }
+
+        public void Update(float dt)
+        {
+            if (!IsActive) return;
+            foreach (var c in components)
+                c.Update(dt);
+        }
+
+        public void OnDestroy()
+        {
+            foreach (var c in components)
+                c.OnDestroy();
+        }
     }
 }

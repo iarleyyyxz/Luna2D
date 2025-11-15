@@ -63,8 +63,9 @@ namespace Luna.Renderer
             byte[] pixels = new byte[Width * Height * 4];
 
             // copia os pixels do OpenGL
+            
             GL.BindTexture(TextureTarget.Texture2D, ColorTex);
-            GL.GetTexImage(TextureTarget.Texture2D, 0, PixelFormat.Rgba, PixelType.UnsignedByte, pixels);
+            GL.GetTexImage(TextureTarget.Texture2D, 0, PixelFormat.Bgra, PixelType.UnsignedByte, pixels);
             GL.BindTexture(TextureTarget.Texture2D, 0);
 
             // atualiza a SDL texture

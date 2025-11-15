@@ -6,6 +6,10 @@ using Luna.Util;
 using Luna.Preferences;
 using OpenTK.Graphics.OpenGL4;
 using Luna.Renderer;
+using Luna.g2d;
+using Luna.Ecs;
+using OpenTK.Mathematics;
+using Luna.g2d.Scene;
 
 public class Window
 {
@@ -13,15 +17,13 @@ public class Window
     private IntPtr _renderer;
     public bool IsRunning { get; private set; }
 
-    public int Width { get; set; }
-    public int Height { get; set; }
+    public static int Width { get; set; }
+    public static int Height { get; set; }
     public string Title { get; set; }
 
     bool isFullscreen = true;
 
     private FrameBuffer2D framebuffer;
-    private GLQuadRenderer quad;
-
 
     public Window(string title, int width, int height)
     {
@@ -55,10 +57,10 @@ public class Window
         
         SetWindowIcon("assets/icons/LunaIcon.bmp");
         _renderer = SDL.SDL_CreateRenderer(
-    _window,
-    -1,
-    SDL.SDL_RendererFlags.SDL_RENDERER_ACCELERATED | SDL.SDL_RendererFlags.SDL_RENDERER_PRESENTVSYNC
-);
+                    _window,
+                    -1,
+                    SDL.SDL_RendererFlags.SDL_RENDERER_ACCELERATED | SDL.SDL_RendererFlags.SDL_RENDERER_PRESENTVSYNC
+                    );
 
         if (_renderer == IntPtr.Zero)
             throw new Exception("Renderer Error: " + SDL.SDL_GetError());
@@ -79,7 +81,17 @@ public class Window
         var status = GL.CheckFramebufferStatus(FramebufferTarget.Framebuffer);
         Console.WriteLine("FBO Status: " + status);
         GL.BindFramebuffer(FramebufferTarget.Framebuffer, 0);
-        quad = new GLQuadRenderer();
+
+        GameObject player = new GameObject("Player");
+
+var transform = player.AddComponent<Transform2D>();
+var renderer = player.AddComponent<SpriteRenderer>();
+renderer.Sprite = new Sprite2D("assets/textures/player.png");
+renderer.Sprite.Size = new Vector2(64,64);
+//renderer.Sprite.UV0 = new Vector2(1, 1);
+SceneManager.AddScene(new Scene("scene"));
+SceneManager.LoadScene("scene");
+SceneManager.CurrentScene.AddGameObject(player);
 
         IsRunning = true;
     }
@@ -96,8 +108,7 @@ public class Window
             GL.Clear(ClearBufferMask.ColorBufferBit);
             
             // render stage
-
-         //   quad.DrawQuad(50, 50, 30, 30, 1f, 1f, 1f, 1f, framebuffer.Width, framebuffer.Height);
+            SceneManager.CurrentScene.Update(Time.DeltaTime, Width, Height);
 
             framebuffer.Unbind();
 
@@ -113,8 +124,6 @@ public class Window
 
         Quit();
     }
-
-
 
 
     private void ProcessEvents()

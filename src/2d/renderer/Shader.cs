@@ -28,6 +28,7 @@
 using System;
 using System.IO;
 using OpenTK.Graphics.OpenGL4;
+using OpenTK.Mathematics;
 
 namespace Luna.g2d.Renderer
 {
@@ -72,5 +73,28 @@ namespace Luna.g2d.Renderer
 
         public void Use() => GL.UseProgram(Handle);
         public void Dispose() => GL.DeleteProgram(Handle);
+
+        public int GetIntLocation(string name)
+        {
+            return GL.GetUniformLocation(Handle, name);
+        }
+
+        public void SetMatrix4(string name, Matrix4 matrix)
+        {
+            int loc = GetIntLocation(name);
+            if (loc == -1)
+            {
+                Console.WriteLine($"[Shader] Warning: uniform '{name}' not found.");
+                return;
+            }
+
+            GL.UniformMatrix4(loc, false, ref matrix);
+        }
+
+
+        public static implicit operator int(Shader v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
