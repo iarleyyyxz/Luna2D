@@ -4,7 +4,7 @@
 
 [![C#](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://dotnet.microsoft.com/languages/csharp)
 [![.NET 9.0](https://img.shields.io/badge/.NET-9.0-5C2D91?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/download/dotnet/9.0)
-[![SDL2](https://img.shields.io/badge/Graphics%20&%20Input-SDL2-123456?style=for-the-badge&logo=sdl&logoColor=white)](https://www.libsdl.org/)
+[![SDL2](https://img.shields.io/badge/UI%20&%20Input-SDL2-123456?style=for-the-badge&logo=sdl&logoColor=white)](https://www.libsdl.org/)
 [![OpenTK](https://img.shields.io/badge/Rendering-OpenTK-000000?style=for-the-badge&logo=opengl&logoColor=white)](https://opentk.net/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
