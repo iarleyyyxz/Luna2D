@@ -46,7 +46,7 @@
           "dependencies": {
             "OpenTK": {
               "target": "Package",
-              "version": "[4.6.6, )"
+              "version": "[4.9.4, )"
             },
             "SDL2-CS": {
               "target": "Package",
