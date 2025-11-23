@@ -16,15 +16,6 @@ Luna2D is a **2D game engine** currently under development, designed to be simpl
 
 > ⚠️ **Actively Under Construction** - This repository reflects continuous, early-stage development. New features and refactoring are being implemented constantly. The engine is not yet ready for production use.
 
-## ✨ Key Features (Under Development)
-
-* **Optimized 2D Rendering:** Utilizes **OpenTK** (which is an OpenGL wrapper) for low-level, high-performance graphics rendering.
-* **Window and Input Handling:** Uses **SDL (Simple DirectMedia Layer)** to manage windows, input events (keyboard, mouse, gamepad), and basic audio.
-* **Integrated UI System:** A custom User Interface (UI) system, designed to facilitate the creation of menus, HUDs, and editing tools within the engine itself.
-* **Component-Based Architecture (ECS-Like):** A flexible structure for composing game entities.
-* **Basic Editor (Next Steps):** The plan is to develop a basic integrated editor for scene visualization and object manipulation.
-* **Asset Pipeline:** Management of textures, spritesheets, fonts, and other resources.
-
 ## 💻 Technologies Used
 
 | Technology | Primary Role |
