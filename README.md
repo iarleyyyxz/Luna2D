@@ -83,11 +83,3 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 * **iarleyyyxz** - [https://github.com/iarleyyyxz](https://github.com/iarleyyyxz)
 
 ---
-
-## 🗺️ Road Map (Next Steps)
-
-* [ ] Implementation of the Engine life cycle (Initialization, Update, Draw).
-* [ ] Refactoring the input system based on SDL events.
-* [ ] Initial development of the Scene Editor (Main editor window).
-* [ ] Support for SpriteSheets and simple animations.
-* [ ] Basic documentation of core classes.
