@@ -25,36 +25,6 @@ Luna2D is a **2D game engine** currently under development, designed to be simpl
 | **SDL2** | Window, input, and audio handling. |
 | **OpenTK** | OpenGL bindings for graphics rendering. |
 
-## 🛠️ How to Clone and Run
-
-### Prerequisites
-
-1.  **.NET 9.0 SDK** (or newer):
-    * Check if the correct SDK is installed: `dotnet --version`
-2.  **Visual Studio** (or another C# and .NET compatible IDE).
-3.  **Native Dependencies (SDL2):** Since SDL is a native dependency, check the project's libs folder or specific setup instructions to ensure the native DLLs/files are accessible to the C# project (usually via NuGet or manually).
-
-### Steps
-
-1.  **Clone the Repository:**
-    ```bash
-    git clone [https://github.com/iarleyyyxz/Luna2D.git](https://github.com/iarleyyyxz/Luna2D.git)
-    cd Luna2D
-    ```
-2.  **Restore Dependencies:**
-    ```bash
-    dotnet restore
-    ```
-3.  **Build the Project:**
-    ```bash
-    dotnet build
-    ```
-4.  **Run the Engine/Example:**
-    ```bash
-    dotnet run --project [MainEngineProjectName]
-    ```
-    * *(Replace `[MainEngineProjectName]` with the actual name of the startup project in your solution)*.
-
 ## 🤝 Contributions
 
 Contributions, suggestions, and bug reports are highly welcome!
