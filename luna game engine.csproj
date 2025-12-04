@@ -9,6 +9,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="11.3.9" />
 		<PackageReference Include="Frent" Version="0.6.1-beta" />
 		<PackageReference Include="NVorbis" Version="0.10.5" />
 		<PackageReference Include="OpenTK" Version="4.9.4" />

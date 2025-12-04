@@ -27,23 +27,13 @@ namespace Luna.g2d.Scene
 
         public void Update(float deltaTime)
         {
-            systems.Update(deltaTime);
+            
         }
 
-        public Camera2D GetCamera()
-        {
-            return Camera2D;
-        }
+        public Camera2D GetCamera() => Camera2D;
 
-        public SystemProvider GetSystems()
-        {
-            return systems;   
-        }
-
-        public World GetWorld()
-        {
-            return World2D;
-        }
+        public SystemProvider GetSystems() => systems;
+        public World GetWorld() => World2D;
 
     }
 }
