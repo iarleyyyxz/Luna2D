@@ -84,7 +84,7 @@ namespace Luna.Core
         {
             if (textures.ContainsKey(path))
             {
-                textures[path].Dispose(); // se Texture2D tiver Dispose()
+                textures[path].Dispose(); 
                 textures.Remove(path);
             }
         }
@@ -115,7 +115,7 @@ namespace Luna.Core
 
             if (shaders.ContainsKey(key))
             {
-                shaders[key].Dispose(); // se sua classe shader tiver Dispose
+                shaders[key].Dispose();
                 shaders.Remove(key);
             }
         }
