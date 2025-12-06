@@ -1,39 +1,46 @@
 using Frent;
 using Luna.Ecs;
-using Luna.g2d.Interfaces;
+using Luna.g2d;
 using Luna.g2d.Providers;
 using Luna.g2d.Renderer;
 
-namespace Luna.g2d.Scene
+namespace Luna.SceneSystem
 {
-    public class Scene : IScene
+    public abstract class Scene
     {
-        private SystemProvider systems;
+        public World World { get; private set; }
+        public SystemProvider Systems { get; private set; }
 
-        private World World2D;
+        public Camera2D MainCamera { get; private set; }
 
-        private Camera2D Camera2D;
-
-        public void Start()
+        public virtual void Start()
         {
-            World2D = new World();
-            systems = new SystemProvider();
+            World = new World();
+            Systems = new SystemProvider();
+
+            // SISTEMAS QUE TODA CENA PRECISA
+            Systems.AddSystem(new Camera2DSystem(), World);
+            Systems.AddSystem(new SpriteRenderSystem(), World);
+
+            OnLoad(); // cria entidades
         }
 
-        public void Stop()
+        protected abstract void OnLoad(); // aqui você monta a cena
+
+        public void Update(float dt)
         {
-            
+            Systems.Update(dt);
+            World.Update();
         }
 
-        public void Update(float deltaTime)
+        public void Render()
         {
-            
+            Systems.Render();
         }
 
-        public Camera2D GetCamera() => Camera2D;
-
-        public SystemProvider GetSystems() => systems;
-        public World GetWorld() => World2D;
-
+        public Entity CreateEntity()
+        {
+            return World.Create();
+        }
     }
 }

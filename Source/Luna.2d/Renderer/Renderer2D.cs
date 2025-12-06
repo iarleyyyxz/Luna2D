@@ -1,35 +1,37 @@
-using System.Numerics;
+using Luna.Ecs;
+using Luna.g2d;
+using Luna.g2d.Renderer;
+using OpenTK.Mathematics;
 
-namespace Luna.g2d.Renderer
+public static class Renderer2D
 {
-    public static class Renderer2D
+    private static SpriteBatch2D batch = new SpriteBatch2D();
+    private static Matrix4 VP;
+
+    public static void Begin(Matrix4 viewProjection)
     {
-        private static SpriteBatch2D batch = new SpriteBatch2D();
+        VP = viewProjection;
+        batch.Begin();
+    }
 
-        public static void Begin()
-        {
-            batch.Begin();
-        }
+    public static void Draw(Sprite2D sprite, Transform2D transform, Vector4 tint)
+    {
+        batch.DrawSprite(
+            sprite.Texture,
+            transform.Position,
+            transform.Scale,
+            transform.Rotation,
+            tint,
+            sprite.UV0,
+            sprite.UV1,
+            false,
+            false,
+            0
+        );
+    }
 
-        public static void Draw(Sprite2D sprite)
-        {
-            batch.DrawSprite(
-                sprite.Texture,
-                sprite.Position,
-                sprite.Size,
-                sprite.Rotation,
-                sprite.Color,
-                sprite.UV0,
-                sprite.UV1,
-                sprite.FlipX,
-                sprite.FlipY,
-                sprite.Layer
-            );
-        }
-
-        public static void End(int screenW, int screenH)
-        {
-            batch.End(screenW, screenH);
-        }
+    public static void End()
+    {
+        batch.End(VP);
     }
 }

@@ -5,7 +5,7 @@ class Program
 {
     static void Main()
     {
-        Window window = new Window("Luna Game Engine", 800, 600);
-        window.Run();
+        //Window window = new Window("Luna Game Engine", 800, 600);
+        //window.Run();
     }
 }

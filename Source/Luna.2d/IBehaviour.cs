@@ -1,6 +1,6 @@
 using Frent; 
 
-namespace Luna.g2d.Interfaces
+namespace Luna.g2d
 {
     /// <summary>
     /// Defines the basic interface for a component of behavior (Behaviour)

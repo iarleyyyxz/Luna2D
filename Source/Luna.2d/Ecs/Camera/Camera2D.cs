@@ -1,22 +1,27 @@
-using System.Numerics;
-using Frent;
+using OpenTK.Mathematics;
 
-namespace Luna.g2d
+public struct Camera2D
 {
-    public struct Camera2D
+    public Vector2 ProjectionSize;
+    public float Zoom;
+
+    public Matrix4 View;
+    public Matrix4 Projection;
+    public Matrix4 ViewProjection;
+
+    public bool IsMainCamera;
+
+    public void UpdateCamera(Vector2 position)
     {
-        public float Zoom;
-        public Vector2 ProjectionSize;    
-        public bool IsMainCamera;
+        View = Matrix4.CreateTranslation(-position.X, -position.Y, 0);
 
-        public bool FollowTarget;
-        public Entity Target;
-        public float FollowSmoothing;    
+        Projection = Matrix4.CreateOrthographic(
+            ProjectionSize.X / Zoom,
+            ProjectionSize.Y / Zoom,
+            -1f,
+            1f
+        );
 
-        public Matrix4x4 View;
-        public Matrix4x4 Projection;
-        public Matrix4x4 InverseView;
-        public Matrix4x4 InverseProjection;
-        public Matrix4x4 ViewProjection;
+        ViewProjection = View * Projection;
     }
 }

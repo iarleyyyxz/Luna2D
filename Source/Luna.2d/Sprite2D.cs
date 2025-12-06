@@ -1,5 +1,5 @@
 using Luna.Core;
-using System.Numerics;
+using OpenTK.Mathematics;
 
 namespace Luna.g2d
 {
